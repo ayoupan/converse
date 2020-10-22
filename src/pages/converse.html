@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>匡威(CONVERSE)中国官方商城 - 匡威官方网站,正品匡威全系列,新品首发独家平台</title>
+	<link rel="stylesheet" href="../css/converse.css">
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../lib/bootstrap.min.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+	<link rel="stylesheet" href="../lib/swiper.min.css">
+	
+	
+</head>
+<body>
+	<script src="../lib/swiper.min.js"></script>
+	<script src="../lib/jquery.min.js"></script>
+	<script src="../js/converse.js"></script>
+	<header>
+		
+		<div class="logo">
+			<a href="#">CONVERSE<img src="../images/logo_03.png" alt=""></a>
+		</div>
+
+		<div class="login">
+			<ul>
+				<li><a href="#" class="log">登录</a>
+					<div class="dl">
+						<div class="dl-left">
+							<p>还未注册?</p>
+							<span><a href="#" class="djzc">点击注册 ></a></span>
+						</div>
+						<div class="dl-right">
+							<form action="../php/login.php">
+							<p>已经成为会员?</p>
+							&nbsp;&nbsp;&nbsp;账户:&nbsp;<input type="text" name="myname"  style="width: 300px;height: 30px;">
+							<br/>
+							&nbsp;&nbsp;&nbsp;密码:&nbsp;<input type="text" name="mypass"  style="width: 300px;height: 30px;">
+							<br/>
+							<input type="submit" value="登录" class="bt" style="width: 300px;height: 65px;">
+							<br/>
+							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" class="tongyi">&nbsp;&nbsp;一旦登录,即表明您同意匡威更新的隐私政策和使用规则
+							<br/>
+							&nbsp;&nbsp;&nbsp;<input type="checkbox" name="" class="jizhu">&nbsp;&nbsp;记住账号
+							<!-- <div class="guan">
+								x
+							</div> -->
+						</form>
+						</div>
+					</div>
+				</li>
+
+				<li>/</li>
+
+				<li><a href="#" class="register">注册</a>
+					<div class="reg">
+						<div class="reg-1">
+						<form action="../php/reg.php" method="POST">
+						<ul>
+							
+							
+							<li>
+								账号*
+							</li>
+							<li>
+								<input type="text" placeholder="&nbsp;&nbsp;example@converse.com" 
+								name="myname" style="width: 300px;height: 30px;">
+							</li>
+							<li>
+								密码*
+							</li>
+							<li>
+								<input type="text" placeholder="&nbsp;&nbsp;密码至少为8位字符"
+								name="mypass" style="width: 300px;height: 30px;">
+							</li>
+							<li>
+								<input type="checkbox" name="">&nbsp;&nbsp;一旦创建账号,即表明您同意匡威更新的隐私政策和使用规则
+							</li>
+							<li>
+								&nbsp;&nbsp;<input type="submit"  value="立即注册" style="width: 120px;height: 65px;">
+							</li>
+						</ul>
+					</form>
+					</div>
+					<div class="reg-2">
+						<p>已有账号?</p>
+						<span><a href="#" class="djdl">点击登录 ></a></span>
+					</div>
+					</div>
+				</li>
+
+				<li><a href=""><span class="iconfont aa">&#xe603;</span></a></li>
+
+				<li><a href="../pages/cart.html" class="shopping">购物车</a></li>
+
+				<li><a href=""><span>0</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe604;</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe611;</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe7b3;</span></a></li>
+			</ul>
+		</div>
+	
+	</header>
+	<!-- header end -->
+
+	<nav id="nav">
+	
+		<div class="nav-1">
+		 <ul>
+			<li id="nan"><a href="#">男的&nbsp;<span class="iconfont">&#xe6e6;</span></a>
+				<div id="man">
+				 <ul>
+
+				 </ul>
+				</div>
+			</li>
+
+			<li id="nv"><a href="#">女的&nbsp;<span class="iconfont">&#xe6e6;</span></a>
+				<div id="women">
+					<ul>
+						
+					</ul>
+					</div>
+			</li>
+			<li id="et"><a href="#">儿童&nbsp;<span class="iconfont">&#xe6e6;</span></a>
+				<div id="children">
+					<ul>
+						
+					</ul>
+				</div>
+			</li>
+			<li><a href="#">优惠折扣&nbsp;<span class="iconfont">&#xe6e6;</span></a></li>
+			<li><a href="#">尖货发售&nbsp;<span class="iconfont">&#xe6e6;</span></a></li>
+			<li><a href="#">店铺分布&nbsp;<span class="iconfont">&#xe6e6;</span></a></li>
+		 </ul>	
+		</div>
+	
+	</nav>
+	<script>
+
+		var nan=document.getElementById('nan')
+		var nv=document.getElementById('nv')
+		var et=document.getElementById('et')
+		var man=document.getElementById('man')
+		var women=document.getElementById('women')
+		var children=document.getElementById('children')
+
+		nan.onmouseenter=function(){
+			man.style.display="block"
+		}
+		nan.onmouseleave=function(){
+			man.style.display="none"
+		}
+		nv.onmouseenter=function(){
+			women.style.display="block"
+		}
+		nv.onmouseleave=function(){
+			women.style.display="none"
+		}
+		et.onmouseenter=function(){
+			children.style.display="block"
+		}
+		et.onmouseleave=function(){
+			children.style.display="none"
+		}
+
+		var log=document.getElementsByClassName('log')[0];
+		var dl=document.getElementsByClassName('dl')[0];
+		var register=document.getElementsByClassName('register')[0];
+		var reg=document.getElementsByClassName('reg')[0];
+
+		 log.onclick=function(){
+			dl.style.display="block";
+			reg.style.display="none"
+	}
+		register.onclick=function(){
+			reg.style.display="block";
+			dl.style.display="none";
+	}
+		var djdl=document.getElementsByClassName('djdl')[0];
+		var djzc=document.getElementsByClassName('djzc')[0];
+	
+	 	djdl.onclick=function(){
+			reg.style.display="none"
+			dl.style.display="block";
+		 }
+		djzc.onclick=function(){
+			reg.style.display="block";
+			dl.style.display="none";
+		}
+		
+	</script>
+	<!-- nav end -->
+
+	<section>
+		
+		<p><a href="#">尊敬的顾客,近期有不法分子利用刷单为由骗取财物,如接到此类诈骗信息请勿相信,以防钱财损失。如您对订单有疑问,请联系在线客服。</a></p>
+		
+	</section>
+
+	<!-- section end -->
+
+
+	<div class="swiper-container">
+		
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="../images/all_star_pack_kv_pc_201009.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="../images/renew_kv_pc_201001.gif" alt=""></div>
+			<div class="swiper-slide"><img src="../images/cdg_kv_pc_201006.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="../images/streetdance_kv_pc_200916.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="../images/utility_fleece_kv_pc_200928.png" alt=""></div>
+		</div>
+		<!-- 如果需要分页器 -->
+		<div class="swiper-pagination"></div>
+		
+		<!-- 如果需要导航按钮 -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		
+		<!-- 如果需要滚动条 -->
+		<div class="swiper-scrollbar"></div>
+		
+	</div>
+
+
+ 
+  <script>        
+	var mySwiper = new Swiper ('.swiper-container', {
+	  loop: true, // 循环模式选项
+	  autoplay:true,
+	  
+	  // 如果需要分页器
+	  pagination: {
+		el: '.swiper-pagination',
+	  },
+	  
+	  // 如果需要前进后退按钮
+	  navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	  },
+	  
+	  // 如果需要滚动条
+	  scrollbar: {
+		el: '.swiper-scrollbar',
+	  },
+	})        
+	</script>
+
+	<!-- 轮播图 end -->
+
+	<article>
+		<main>
+			<div class="hot">
+			<div class="ms">
+			   <p><span>限时秒杀</span></p>
+			   <p>距离结束</p>
+				<span class="bb"></span><i>&nbsp;天</i>
+				<span class="bb"></span><i>&nbsp;小时</i>
+				<span class="bb"></span><i>&nbsp;分钟</i>
+				<span class="bb"></span><i>&nbsp;秒</i>
+	          </div>
+			</div>
+			<div class="hot-1">
+				<a href="#" id="remai">热卖单品</a>
+			</div>
+		  </div>
+			<div class="hot-2">
+				<ul>
+					<div class="hot-2-1">
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					
+				</div>
+				<div class="hot-2-2">
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+				</div>
+				<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+				<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+				<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+				<li><a href="../pages/details.html"><img src="../images/123.png" alt="">【男女同款】CDG<br/>¥1099</a></li>
+					
+					
+				</ul>	
+			</div>
+			<div class="hot-3">
+				<a href="" class="hot-3-1">查看所有最新产品 ></a>
+			</div>
+		</main>
+	</article>
+
+	<!-- article end -->
+
+	<aside>
+		<main>
+			<div class="new-1">
+				<a href="#" id="xinpin">新品推荐</a>
+			</div>
+			<div class="new-2">
+				<ul>
+					<div class="hot-2-1">
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					</div>
+					<div class="hot-2-2">
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					</div>
+					<div class="hot-2-2">
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					</div>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+					<li><a href=""><img src="../images/169373C418_1B_NEW.png" alt="">〖男女同款〗 ALL START<br/>¥599</a></li>
+				</ul>
+			</div>
+		</main>
+	</aside>
+	
+	<!-- aside end -->
+
+	<menu>
+		<main>
+			<div class="menu-1">
+			<div class="title">
+				<ul>
+					<li><img src="../images/logo-icon.png" alt=""></li>
+					<li><a href="">街头先型</a></li>
+				</ul>
+			</div>
+			<div class="left">
+				<ul>
+					<li><a href=""><img src="../images/tout_pc_201001.jpg" alt=""></a></li>
+					<li><a href="">CONVERSE ELEVATION</a></li>
+				</ul>
+				<div class="left-1">
+					<h4><a href="">查看更多 ></a></h4>
+				</div>
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href=""><img src="../images/01HPTouts-Shapes.png" alt=""></a></li>
+					<li><a href="">CONVERSE SHAPES</a></li>
+				</ul>
+				<div class="left-1">
+					<h4><a href="">查看更多 ></a></h4>
+				</div>
+			</div>
+		</div>
+			<div class="title">
+				<ul>
+					<li><img src="../images/logo-icon.png" alt=""></li>
+					<li><a href="">至酷精选 玩转潮流</a></li>
+				</ul>
+			</div>
+			<div class="tt">
+			<div class="one">
+				<ul>
+					<li><a href=""><img src="../images/PC_5_RENEW_200902.jpg" alt=""></a></li>
+					<li><a href="">环保再生系列</a></li>
+					<li><a href="">查看更多 ></a></li>
+				</ul>
+			</div>
+			<div class="one">
+				<ul>
+					<li><a href=""><img src="../images/04PC_BottomTout_rivals.jpg" alt=""></a></li>
+					<li><a href="">CHUCK 70</a></li>
+					<li><a href="">查看更多 ></a></li>
+				</ul>
+			</div>
+			<div class="one">
+				<ul>
+					<li><a href=""><img src="../images/PC_6-AS_200701.jpg" alt=""></a></li>
+					<li><a href="">CHUCK TAYLOR ALL SRAR</a></li>
+					<li><a href="">查看更多 ></a></li>
+				</ul>
+			</div>
+			</div>
+		</main>
+	</menu>
+
+	<!-- menu end -->
+
+	<div class="follow">
+		<div>
+			<h3><a href="">关注CONVERSE</a></h3>
+			<P><a href="">Converse同时活跃在各类社交网络平台，点击下列你所喜爱的常用社交平台，密切关注Converse的最新产品与资讯。</a></P>
+			<div class="img">
+				<ul>
+					<li><a href=""><img src="../images/www.converse.com_03.png" alt=""></a></li>
+					<li><a href=""><img src="../images/www.converse.com_05.png" alt=""></a></li>
+				</ul>
+		</div>
+		</div>
+	</div>
+	
+	<!-- follow end -->
+
+	<div class="msg">
+		<div class="msg-1">
+			<ul>
+				<li><a href="">男的</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">JACK PURCELL</a></li>
+				<li><a href="">CHUCK II</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">女的</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">JACK PURCELL</a></li>
+				<li><a href="">CHUCK II</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">儿童</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">GLOBAL</a></li>
+				<li><a href="">CONVERSE GLOBAL SITES</a></li>
+			</ul>
+			<ul>
+				<li><a href="">我的账户</a></li>
+				<li><a href="">会员中心</a></li>
+				<li><a href="">过去订单</a></li>
+				<li><a href="">退换货</a></li>
+				<li><a href="">账号设置</a></li>
+				<li><a href="">地址簿</a></li>
+				<li><a href="">我的优惠券</a></li>
+				<li><a href="">我的收藏</a></li>
+				<li><a href="">我的评论</a></li>
+			</ul>
+			<ul>
+				<li><a href="">帮助和购物指南</a></li>
+				<li><a href="">账户</a></li>
+				<li><a href="">订单</a></li>
+				<li><a href="">尺码</a></li>
+				<li><a href="">退货和退款</a></li>
+				<li><a href="">配货</a></li>
+				<li><a href="">换货</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">常见问题</a></li>
+			</ul>
+			<ul>
+				<li><a href="">NIKE</a></li>
+				<li><a href="">NIKE+</a></li>
+				<li><a href="">JORDAN</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- msg end -->
+
+	<footer>
+		<div class="footer-1">
+			<a href="">关于我们</a>
+			<a href="">帮助和购物指南</a>
+			<a href="">隐私政策</a>
+			<a href="">适用规则</a>
+		</div>
+		<img src="../images/logo_03.png" alt="" class="l3">
+		<p>
+			@匡威体育用品（中国）有限公司 保留所有权利 <img src="../images/beiAn.png" alt=""> 沪ICP备11044134号-2   沪公网安备 31011002001667号 <img src="../images/beiAn.png" alt="">  电子营业执照     公司证照
+		</p>
+		<img src="../images/cautionIcon.png" alt="" class="l4">
+	</footer>
+
+	<!-- footer end -->
+
+<script>
+	djs()
+       timer=setInterval(function(){
+           	djs()
+      },1000)
+</script>
+
+</body>
+</html> 

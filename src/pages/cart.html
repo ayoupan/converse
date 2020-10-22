@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>购物车</title>
+	<link rel="stylesheet" href="../css/cart.css">
+	<link rel="stylesheet" href="../css/public.css">
+	<link rel="stylesheet" href="../lib/bootstrap.min.css">
+	<link rel="stylesheet" href="../font/iconfont.css">
+	<link rel="stylesheet" href="../lib/swiper.min.css">
+	
+</head>
+<body>
+	<header>
+		
+		<div class="logo">
+			<a href="../pages/converse.html">CONVERSE<img src="../images/logo_03.png" alt=""></a>
+		</div>
+
+		<div class="login">
+			<ul>
+				<li><a href="#" class="log">登录</a>
+				<li><a href="#" class="register">注册</a>
+				<li><a href=""><span class="iconfont aa">&#xe603;</span></a></li>
+				<li><a href="#" class="shopping">购物车</a></li>
+				<li><a href=""><span>0</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe604;</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe611;</span></a></li>
+				<li><a href=""><span class="iconfont aa">&#xe7b3;</span></a></li>
+			</ul>
+		</div>
+	</header>
+	<h3 class="gwc">购物车</h3>
+	<table class="tb">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>商品图片</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+		
+	</table>
+	<div class="my">
+		没有更多商品了
+	</div>
+	<script src="../lib/jquery.min.js"></script>
+	<script>
+		showTbody();
+		function showTbody(){
+			$.ajax({
+				url:'../interface/showlist.php',
+				success:function(res){
+					if(res.code){
+						var arr=res.data;
+						if(res.data){
+							$('table').show();
+							$('.my').hide();
+							$('tbody').empty();
+							$.each(arr,function(index,item){
+							$("tbody").append(`<tr id="${item.product_id}">
+								<td>${item.product_name}</td>
+								<td><img src="${item.product_img}"></td>
+								<td>${item.product_price}</td>
+								<td><span class='add'>+</span>
+                                        <span>${item.product_num}</span>
+                                        <span class="jian">-</span></td>
+								<td class="del">删除</td>
+									</tr>`)
+							})
+						}
+					}else{
+						$('table').hide();
+                        $('.my').show();
+					}
+				},
+				dataType:'json',
+                cache:false
+			})
+		}
+			// 点击+增加一个商品数量,点击-减少一个商品数量
+			$('tbody').click(function(e){
+            var target = e.target;
+            // target是一个dom节点
+            if((target.className=='add')||(target.className=='jian')){
+                // 点击+增加一个商品数量,点击-减少一个商品数量
+                $.ajax({
+                    url:'../interface/updatewq.php',
+                    data:{
+                        type:target.className,
+                        id:$(target).parents('tr').attr('id')
+                    },
+                    success:function(res){
+                        if(res.code){
+                            showTbody()
+                        }
+                    },
+                    dataType:'json'
+                })
+
+            }else if(target.className=='del'){
+                // 点击删除按钮删除一个商品
+                $.ajax({
+                    url:'../interface/delwq.php',
+                    data:{
+                        id:$(target).parents('tr').attr('id')
+                    },
+                    success:function(res){
+                        if(res.code){
+                            showTbody()
+                        }
+                    },
+                    dataType:'json'
+                })
+            }
+        })
+	</script>
+	<div class="msg">
+		<div class="msg-1">
+			<ul>
+				<li><a href="">男的</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">JACK PURCELL</a></li>
+				<li><a href="">CHUCK II</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">女的</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">JACK PURCELL</a></li>
+				<li><a href="">CHUCK II</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">儿童</a></li>
+				<li><a href="">CHUCK TAYLOR ALL STAR</a></li>
+				<li><a href="">CONVERSE CONS</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">踩的</a></li>
+				<li><a href="">戴的</a></li>
+				<li><a href="">优惠</a></li>
+			</ul>
+			<ul>
+				<li><a href="">GLOBAL</a></li>
+				<li><a href="">CONVERSE GLOBAL SITES</a></li>
+			</ul>
+			<ul>
+				<li><a href="">我的账户</a></li>
+				<li><a href="">会员中心</a></li>
+				<li><a href="">过去订单</a></li>
+				<li><a href="">退换货</a></li>
+				<li><a href="">账号设置</a></li>
+				<li><a href="">地址簿</a></li>
+				<li><a href="">我的优惠券</a></li>
+				<li><a href="">我的收藏</a></li>
+				<li><a href="">我的评论</a></li>
+			</ul>
+			<ul>
+				<li><a href="">帮助和购物指南</a></li>
+				<li><a href="">账户</a></li>
+				<li><a href="">订单</a></li>
+				<li><a href="">尺码</a></li>
+				<li><a href="">退货和退款</a></li>
+				<li><a href="">配货</a></li>
+				<li><a href="">换货</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">常见问题</a></li>
+			</ul>
+			<ul>
+				<li><a href="">NIKE</a></li>
+				<li><a href="">NIKE+</a></li>
+				<li><a href="">JORDAN</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		<div class="footer-1">
+			<a href="">关于我们</a>
+			<a href="">帮助和购物指南</a>
+			<a href="">隐私政策</a>
+			<a href="">适用规则</a>
+		</div>
+		<img src="../images/logo_03.png" alt="" class="l3">
+		<p>
+			@匡威体育用品（中国）有限公司 保留所有权利 <img src="../images/beiAn.png" alt=""> 沪ICP备11044134号-2   沪公网安备 31011002001667号 <img src="../images/beiAn.png" alt="">  电子营业执照     公司证照
+		</p>
+		<img src="../images/cautionIcon.png" alt="" class="l4">
+	</footer>
+</body>
+</html>
